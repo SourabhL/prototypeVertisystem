@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Bootstrap Example</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+  <script>
+  
+  // if highlight changed content checked, check both
+           function check()
+           {
+           document.getElementById("check4").checked = false;
+           document.getElementById("check1").checked = true;
+           document.getElementById("check2").checked = true;
+           
+           }
+            
+            // if any of those two unchecked, uncheck highlight changed content
+            function uncheck()
+           {
+           document.getElementById("check4").checked = false;
+           
+          if (document.getElementById("check1").checked == false || document.getElementById("check2").checked == false){
+          
+            document.getElementById("check3").checked = false;
+           } 
+           
+            if (document.getElementById("check1").checked == true)
+            {
+            
+            if(document.getElementById("check2").checked == true)
+            {
+            document.getElementById("check3").checked = true;
+            }
+   
+           } 
+           
+           }
+           
+           // uncheckall
+           
+           function uncheckall()
+           {
+            if (document.getElementById("check4").checked == true)
+            {
+            document.getElementById("check1").checked = false;
+           document.getElementById("check2").checked = false;
+            document.getElementById("check3").checked = false;
+            
+            }
+           
+           }
+           
+          
+           
+           
+        </script>
+  
+  <style>
+  
+ 
+ .mobile
+	{
+		position:absolute;
+		top: 122px;
+		left: 35px;
+		z-index: 2;
+	}
+    
+   
+    
+   
+</style>
+  
+</head>
+<body>
+
+<div class="container">
+  <h2>Large Modal</h2>
+  <!-- Trigger the modal with a button -->
+  <button type="button" class="btn btn-info btn-lg" data-toggle="modal" data-target="#myModal">Open Large Modal</button>
+
+  <!-- Modal -->
+  <div class="modal fade" id="myModal" role="dialog">
+    <div class="modal-dialog modal-lg">
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal">&times;</button>
+          <h4 class="modal-title">Modal Header</h4>
+        </div>
+        <div class="modal-body">
+          <p>This is a large modal.</p>
+        </div>
+		<div>
+		                               <img class="img-responsive" src="Images\EditedShelve.png" usemap="#mobile1" style="padding-bottom:4%"/>
+                                       
+                                       <img src="Images\mobile.png" id ="imgId" class="mobile">
+                                       
+                                       
+                                       
+								<map name="mobile1">
+                                
+									<area  coords="31,0,82,64"  href="#" class="styling"  shape="rect" >
+                                  
+								</map>
+								
+														
+  <form>
+    <div class="checkbox" onclick="check()">
+      <label><input type="checkbox" id="check3" value="">Highlight changed content</label>
+    </div>
+    <div class="checkbox" >
+      <label><input type="checkbox"   id="check4" value="">Same content</label>
+    </div>
+    <div class="checkbox" onclick="uncheck()">
+      <label><input type="checkbox" id="check1" value="">Highlight Moved ones</label>
+    </div>
+    <div class="checkbox" onclick="uncheck()">
+      <label><input type="checkbox" id="check2" value="">Highlight newly added</label>
+    </div>
+  </form>
+		</div>
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+		
+        <div class="modal-footer">
+          <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+</body>
+</html>

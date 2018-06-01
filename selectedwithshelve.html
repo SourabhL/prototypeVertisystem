@@ -1,0 +1,293 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Bootstrap Example</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+  <script>
+  
+  // if highlight changed content checked, check both
+           function check()
+           {
+           
+           // select all mobiles with some changed content
+           if ($('#check3').prop('checked'))
+               {
+               $("#img4").attr("class","active_img");
+               $("#img5").attr("class","active_img");
+               $("#img6").attr("class","active_img");
+               $("#img7").attr("class","active_img");
+               $("#img8").attr("class","active_img");
+               }
+               else
+               {
+               $("#img4").removeAttr("class");
+               $("#img5").removeAttr("class");
+               $("#img6").removeAttr("class");
+               $("#img7").removeAttr("class");
+               $("#img8").removeAttr("class");
+               }
+           
+            // select all mobiles with some changed content is up
+            
+            console.log('Inside check function');
+            console.log("$('#check3').prop('checked')"+$('#check3').prop('checked'));
+            console.log("$('.change').prop('checked'"+$('.change').prop('checked'));
+            if ($('#check3').prop('checked'))
+            {
+               
+                $('.change').prop('checked', true);
+            }
+            else
+                $('.change').prop('checked', false);
+           
+           }
+            
+            // if any of those two unchecked, uncheck highlight changed content
+           
+           
+           
+           
+           function uncheck1()
+           {
+          if (document.getElementById("check1").checked == false){
+          
+            document.getElementById("check3").checked = false;
+           } 
+           
+            if (document.getElementById("check1").checked == true)
+            {
+            
+            if(document.getElementById("check2").checked == true)
+            {
+            document.getElementById("check3").checked = true;
+            }
+   
+           } 
+           
+           
+            if ($('#check1').prop('checked'))
+           {
+           
+           $("#img4").addClass("active_img");
+           $("#img5").addClass("active_img");
+           $("#img6").addClass("active_img");
+           }
+           else{
+           
+           
+           $("#img4").removeClass("active_img");
+            $("#img5").removeClass("active_img");
+           $("#img6").removeClass("active_img");
+           }
+       
+     }
+           
+           
+            function uncheck2()
+           {
+          if (document.getElementById("check2").checked == false){
+          
+            document.getElementById("check3").checked = false;
+           } 
+           
+            if (document.getElementById("check1").checked == true)
+            {
+            
+            if(document.getElementById("check2").checked == true)
+            {
+            document.getElementById("check3").checked = true;
+            }
+   
+           } 
+           
+           
+           
+           
+           if ($('#check2').prop('checked'))
+           {
+           $("#img7").addClass("active_img");
+           $("#img8").addClass("active_img");
+           }
+          else
+           {
+           $("#img7").removeClass("active_img");
+           $("#img8").removeClass("active_img");
+           }
+          
+       
+     }
+           
+           
+           
+           
+           
+           // uncheckall
+           
+           function uncheckall()
+           {
+            if (document.getElementById("check4").checked == true)
+            {
+            document.getElementById("check1").checked = false;
+           document.getElementById("check2").checked = false;
+            document.getElementById("check3").checked = false;
+            
+            }
+           
+           }
+           
+                    $(function () {
+                    
+                    $("img").on("click",function()
+                    {
+                       $('.active_img').removeClass('active_img');
+                        $(this).toggleClass("active_img");
+                    })
+                   });
+                   
+                   
+                   // select mobiles with same content
+                   
+               function  sameContent()
+               {
+               if ($('#check4').prop('checked'))
+               {
+               $("#img1").addClass("active_img");
+               $("#img2").addClass("active_img");
+               $("#img3").addClass("active_img");
+               }
+               else
+               {
+               $("#img1").removeClass("active_img");
+               $("#img2").removeClass("active_img");
+               $("#img3").removeClass("active_img");
+               }
+               }
+                   
+           
+        </script>
+  
+  <style>
+ 
+
+img{
+border: solid 1px transparent;
+padding:7px;
+}
+.active_img{
+border: solid 2px blue;
+}
+
+.inactive_img{
+border: none;
+}
+
+table, th, td {
+    border: 1px solid black;
+    background-color:#ffff99
+}
+
+</style>
+  
+</head>
+<body>
+
+<div class="container">
+  <h2>Large Modal</h2>
+  <!-- Trigger the modal with a button -->
+  <button type="button" class="btn btn-info btn-lg" data-toggle="modal" data-target="#myModal">Open Large Modal</button>
+
+  <!-- Modal -->
+  <div class="modal fade" id="myModal" role="dialog">
+    <div class="modal-dialog modal-lg">
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal">&times;</button>
+          <h4 class="modal-title">Modal Header</h4>
+        </div>
+        <div class="modal-body">
+          <p>This is a large modal.</p>
+        
+		                 <div class="row" >
+                         
+                                 <table style="width:100%; background-image: url('Images/rowback.png');" >
+  
+  
+  <th>
+		                            
+                                       <div class="col-md-2" style="margin-left:8px">
+                                       <img src="Images\mobile.png" id="img1"  />
+                                       </div>
+         </th>  <th>                           
+                                       
+                                        <div class="col-md-2">
+                                        <img src="Images\mobile2.png" id="img2"  />
+                                         </div>
+           </th>  <th>                                   
+                                         <div class="col-md-2">
+                                        <img src="Images\mobile3.png" id="img3"  />
+                                         </div>
+                                        
+              </th>  <th>                               
+                                        <div class="col-md-2">
+                                        <img src="Images\mobile4.png" id="img4"  />
+                                         </div>
+                </th>                          
+                         </div>    
+ </tr>
+ </table>
+                         <div class="row" style="margin-top:20px;">
+		                            
+                                       <div class="col-md-2" style="margin-left:8px">
+                                       <img src="Images\mobile.png" id="img5"  />
+                                       </div>
+                                       
+                                       
+                                        <div class="col-md-2">
+                                        <img src="Images\mobile2.png" id="img6" />
+                                         </div>
+                                         
+                                         <div class="col-md-2">
+                                        <img src="Images\mobile3.png" id="img7" />
+                                         </div>
+                                        
+                                        
+                                        <div class="col-md-2">
+                                        <img src="Images\mobile4.png" id="img8" />
+                                         </div>
+                         </div>                             
+             </div>                          
+                                       
+                  <br> <br>  <br>  <br>   <br>                                     
+								
+								
+  <form>
+    <div class="checkbox" >
+      <label><input type="checkbox" onclick="check()" id="check3" value="">Highlight changed content</label>
+    </div>
+    <div class="checkbox" >
+      <label><input type="checkbox" onclick="sameContent()" class="same"  id="check4" value="">Same content</label>
+    </div>
+    <div class="checkbox" >
+      <label><input type="checkbox" id="check1" onclick="uncheck1()" class="change" value="">Highlight Moved ones</label>
+    </div>
+    <div class="checkbox" >
+      <label><input type="checkbox" id="check2" onclick="uncheck2()" class="change" value="">Highlight newly added</label>
+    </div>
+  </form>
+		</div>
+        
+      
+        <div class="modal-footer">
+          <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+</body>
+</html>

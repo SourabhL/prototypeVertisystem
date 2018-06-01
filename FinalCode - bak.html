@@ -1,0 +1,510 @@
+<html>
+    <!--Head section start-->
+    <head>
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"><!--Link bootstrap file-->
+        <link rel="stylesheet" href="css/stylesheet.css"><!--link stylesheet-->
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"><!--Link font-awesome icon -->
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script><!--Link JQuery file-->
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script><!-- Link bootstrap jquery file-->
+        <script src="js/ios-orientationchange-fix.min.js"></script>
+        <script src="js/jquery.min.js"></script><!--Link jquery file-->
+        <script src="js/jquery.rwdImageMaps.min.js"></script>
+        <!--Javascript function call to change the image co-ordinate dynamically according to window size-->
+        <script>
+            $(document).ready(function (e) {
+                $('img[usemap]').rwdImageMaps();
+
+            });
+            
+            
+            
+      
+        </script>
+        <script>
+        
+        // tab on first modal
+            function openInfo(evt, blockName) {
+                var i, tabcontent, tablinks;
+                tabcontent = document.getElementsByClassName("tabcontent");
+                for (i = 0; i < tabcontent.length; i++) {
+                    tabcontent[i].style.display = "none";
+                }
+
+                tablinks = document.getElementsByClassName("tablinks");
+                for (i = 0; i < tablinks.length; i++) {
+                    tablinks[i].className = tablinks[i].className.replace(" active", "");
+                }
+                document.getElementById(blockName).style.display = "block";
+                evt.currentTarget.className += " active";
+            }
+            
+            // tab on second modal 
+            function TabInfo(evt, blockName) {
+                var i, tabcontent, tablinks;
+                tabcontent = document.getElementsByClassName("tabcontent");
+                
+                for (i = 0; i < tabcontent.length; i++) {
+                    tabcontent[i].style.display = "none";
+                }
+
+                tablinks = document.getElementsByClassName("tablinks");
+                for (i = 0; i < tablinks.length; i++) {
+                    tablinks[i].className = tablinks[i].className.replace(" active", "");
+                }
+                document.getElementById(blockName).style.display = "block";
+                evt.currentTarget.className += " active";
+            }
+
+            // Get the element with id="defaultOpen" and click on it
+           
+           
+           // if highlight changed content checked, check both
+           
+           
+   
+        function check()
+           {
+           
+           // select all mobiles with some changed content
+           if ($('#check3').prop('checked'))
+               {
+               $("#img4").addClass("active_img");
+           $("#img5").addClass("active_img");
+           $("#img6").addClass("active_img");
+               $("#img7").addClass("active_img");
+           $("#img8").addClass("active_img");
+           $("#img9").addClass("active_img");
+               }
+               else
+               {
+                $("#img4").removeClass("active_img");
+            $("#img5").removeClass("active_img");
+           $("#img6").removeClass("active_img");
+               $("#img7").removeClass("active_img");
+           $("#img8").removeClass("active_img");
+           $("#img9").removeClass("active_img");
+               }
+           
+            // select all mobiles with some changed content is up
+            
+           // console.log('Inside check function');
+           // console.log("$('#check3').prop('checked')"+$('#check3').prop('checked'));
+           // console.log("$('.change').prop('checked'"+$('.change').prop('checked'));
+            if ($('#check3').prop('checked'))
+            {
+               
+                $('.change').prop('checked', true);
+            }
+            else
+            {
+                $('.change').prop('checked', false);
+           
+           }
+           }
+           
+
+            
+            // if any of those two unchecked, uncheck highlight changed content
+            function uncheck1()
+           {
+          if (document.getElementById("check1").checked == false){
+          
+            document.getElementById("check3").checked = false;
+           } 
+           
+            if (document.getElementById("check1").checked == true)
+            {
+            
+            if(document.getElementById("check2").checked == true)
+            {
+            document.getElementById("check3").checked = true;
+            }
+   
+           } 
+           
+           
+            if ($('#check1').prop('checked'))
+           {
+           
+           $("#img4").addClass("active_img");
+           $("#img5").addClass("active_img");
+           $("#img6").addClass("active_img");
+           }
+           else{
+           
+           
+           $("#img4").removeClass("active_img");
+            $("#img5").removeClass("active_img");
+           $("#img6").removeClass("active_img");
+           }
+       
+     }
+           
+           
+            function uncheck2()
+           {
+          if (document.getElementById("check2").checked == false){
+          
+            document.getElementById("check3").checked = false;
+           } 
+           
+            if (document.getElementById("check1").checked == true)
+            {
+            
+            if(document.getElementById("check2").checked == true)
+            {
+            document.getElementById("check3").checked = true;
+            }
+   
+           } 
+           
+           
+           
+           
+           if ($('#check2').prop('checked'))
+           {
+           $("#img7").addClass("active_img");
+           $("#img8").addClass("active_img");
+           $("#img9").addClass("active_img");
+           }
+          else
+           {
+           $("#img7").removeClass("active_img");
+           $("#img8").removeClass("active_img");
+           $("#img9").removeClass("active_img");
+           }
+          
+       
+     }
+           
+           
+            function  sameContent()
+               {
+               if ($('#check4').prop('checked'))
+               {
+               $("#img1").addClass("active_img");
+               $("#img2").addClass("active_img");
+               $("#img3").addClass("active_img");
+               }
+               else
+               {
+               $("#img1").removeClass("active_img");
+               $("#img2").removeClass("active_img");
+               $("#img3").removeClass("active_img");
+               }
+               }
+               
+               
+           // click on image
+           $(function () {
+                    
+                    $("img").on("click",function()
+                    {
+                       $('.active_img').removeClass('active_img');
+                        $(this).toggleClass("active_img");
+                    })
+                   });
+        
+        </script>
+        
+        <style>
+        .mobile1
+	{
+		position:absolute;
+		top: 10px;
+		left: 65px;
+		z-index: 2;
+	}
+    
+       .mobile2
+	{
+		position:absolute;
+		top: 10px;
+		left: 135px;
+		z-index: 2;
+	}
+    
+    
+        .mobile3
+	{
+		position:absolute;
+		top: 10px;
+		left: 210px;
+		z-index: 2;
+	}
+    
+        .mobile4
+	{
+		position:absolute;
+		top: 75px;
+		left: 66px;
+		z-index: 2;
+	}
+    
+        .mobile5
+	{
+		position:absolute;
+		top: 75px;
+		left: 135px;
+		z-index: 2;
+	}
+    
+        .mobile6
+	{
+		position:absolute;
+		top: 75px;
+		left: 210px;
+		z-index: 2;
+	}
+    
+        .mobile7
+	{
+		position:absolute;
+		top: 141px;
+		left: 67px;
+		z-index: 2;
+	}
+    
+        .mobile8
+	{
+		position:absolute;
+		top: 141px;
+		left: 136px;
+		z-index: 2;
+	}
+    
+        .mobile9
+	{
+		position:absolute;
+		top: 141px;
+		left: 210px;
+		z-index: 2;
+	}
+    
+   
+    img{
+  border: solid 1px white;
+   padding:5px;
+}
+.active_img{
+border: solid 2px blue;
+}
+
+.inactive_img{
+
+border: none;
+}
+    
+    
+    
+        </style>
+       
+    </head><!--Head section end-->
+    <body><!--Body section start-->
+        <div class="container-fluid"><!--Container fluid-->
+            <nav class="navbar navbar-inverse" ><!--Navigation bar -->
+                <div class="container-fluid">
+                    <div class="navbar-header" >
+                        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+                            <span class="icon-bar"></span>
+                            <span class="icon-bar"></span>
+                            <span class="icon-bar"></span>                        
+                        </button>
+                        <a class="navbar-brand" href="#" ><b>Mobile Store</b></a>
+                    </div>
+                    <div class="collapse navbar-collapse" id="myNavbar">
+                        <ul class="nav navbar-nav" style="font-size:16px">
+                            <li class="link-3" ><a href="#"><p>Edit Location</p></a></li>
+                            <li class="link-3" ><a href="#" ><p>Issue for This Location</p></a></li>
+                            <li class="link-3"><a href="#" ><p>Image Gallery</p></a></li>
+                            <li class="link-3"><a href="#" ><p>Questionnaries</p></a></li>
+                            <li class="link-3"><a href="#" ><p>All Content</p></a></li>
+                            <li class="link-3"><a href="#" ><p>Orders</p></a></li>
+                            <li class="link-3"><a href="#" ><p>Return to Dashbord</p></a></li>
+                        </ul>
+                    </div>
+                </div>
+            </nav><!--End navigation bar-->
+
+            <img class="img-responsive store" src="Images\Store.png" usemap="#mobilestore" ><!--Mobile store Image -->
+         
+            <map name="mobilestore"><!--Map started -->
+                <!--polygons-->
+                <!--upper left-->
+                <area coords="113,6,41,7,39,55,60,73,92,74,115,74,138,74,169,70,188,55,188,4" shape="poly" data-reveal-id="one" data-toggle="modal" data-target="#myModal">
+                <!--lower right-->
+                <area shape="poly" coords="466,501,466,453,487,439,504,434,524,434,537,434,546,435,562,435,582,436,592,434,606,437,613,446,616,456,614,467,618,478,620,488,620,500" data-reveal-id="one" data-toggle="modal" data-target="#myModal" />
+                <!--upper right-->
+                <area shape="poly" coords="467,5,626,5,622,75,557,71,531,71,509,71,467,72,469,7,583,72,521,39"  data-reveal-id="one" data-toggle="modal" data-target="#myModal">
+                <!--lower left-->
+                <area shape="poly" coords="38,500,40,451,60,437,172,437,191,454,189,501,113,503,153,502,72,502" data-reveal-id="one" data-toggle="modal" data-target="#myModal">
+
+
+                <!--rectangles-->
+                <area shape="rect" coords="218,116,311,156" data-reveal-id="two" data-toggle="modal" data-target="#myModal2" ><!--first-->
+                <area shape="rect" coords="341,116,435,155" data-reveal-id="two" data-toggle="modal" data-target="#myModal2" ><!--second-->
+                <area shape="rect" coords="23,226,125,285"  data-reveal-id="two" data-toggle="modal" data-target="#myModal2" ><!--third-->
+                <area shape="rect" coords="177,226,282,284" data-reveal-id="two" data-toggle="modal" data-target="#myModal2" ><!--fourth-->
+                <area shape="rect" coords="331,224,434,283" data-reveal-id="two" data-toggle="modal" data-target="#myModal2" ><!--fifth-->
+                <area shape="rect" coords="216,352,313,394" data-reveal-id="two" data-toggle="modal" data-target="#myModal2" ><!--sixth-->
+                <area shape="rect" coords="342,353,436,392" data-reveal-id="two" data-toggle="modal" data-target="#myModal2" ><!--seventh-->
+            </map><!--Map End here............. -->
+
+            <!-- Shelf1 Image Modal -->
+            <div class="modal fade" id="myModal" role="dialog">
+                <div class="modal-dialog" >
+                    <div class="modal-content">
+
+                        <!--navidation bar on modal-->
+                        <div class="modal-header" >
+                            <ul class="nav nav-tabs" id="tabContent"  style="border:none;font-size:13px;">
+                                <li class="active link-4"><a href="#" data-toggle="tab">View Fixture</a></li>
+                                <li class="link-4"><a href="#" >Accessories and POP</a></li>
+                                <li class="link-4"><a href="#" >Devices and Display</a></li>
+                                <li class="link-4"><a href="#" >Fixtures and Hardware</a></li>
+                                <li class="link-4"><a href="#" >Issues</a></li>
+                                <li class="link-4"><a href="#" >Gallery</a></li>
+                                <li class="link-4"><a href="#" ><div data-dismiss="modal">&times;</div></a></li>
+                            </ul>
+                        </div>
+                        <div class="row" style="border:none; display:inline">
+                            <div class="col-sm-6" style="padding-left:2px;margin-left:30px;padding-top:7%">
+                                <div class="tab" >
+                                    <button class="tablinks" onclick="openInfo(event, 'ReportProblem')" id="defaultOpen">Report Problem</button>
+                                    <button class="tablinks" onclick="openInfo(event, 'ReportCompliance')">Report Compliance</button>
+                                </div>
+
+                                <div id="ReportProblem" class="tabcontent" style="display:block; max-width:500px;min-width:250px">
+                                    <div class="tab-pane fade in active" id="home_else" style="border-bottom:1px  solid black;height:80px">
+                                        <table style="font-size:12px">
+                                            <tr><th>Basic Information</th></tr>
+                                            <tr><td>Fixture:Aisle bench</td></tr>
+                                            <tr><td>Priority:2</td></tr>
+                                            <tr><td>Language:English</td></tr>
+                                            <tr><td>Merchandising:General</td></tr>
+                                        </table>
+                                    </div>
+                                    <div class="tab-pane fade in active " id="profile_else" style="overflow-x:hidden;padding:0;margin:0; 
+                                         overflow-y:scroll;
+                                         width:100%;
+                                         height:50px;">
+                                        <table style="margin-top:2%"><tr style="font-size:13px"><th >Comments:</th></tr>
+                                            <tr><td style="font-size:13px">Next Gen Aisle Fixture Graphic Codes
+                                                </td>
+                                                </td>
+                                            </tr>
+                                        </table>
+                                    </div>
+                                </div>
+
+
+                                <div id="ReportCompliance" class="tabcontent" style="max-width:500px">
+                                    <span onclick="this.parentElement.style.display = 'none'" class="topright">&times</span>
+
+                                </div>
+                            </div>
+                            <div class="col-sm-offset-1 col-sm-4" style="padding-top:0.5%">
+                                <img class="img-responsive" src="Images\shelf1.jpg" usemap="#shelf" width="250" height="400" />
+                               
+                                
+                            
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div> <!--End modal1-->
+
+
+            <div class="modal fade" id="myModal2" role="dialog" >
+                <div class="modal-dialog modal-lg"  >
+                    <div class="modal-content">
+
+                        <!--navidation bar on modal-->
+                        <div class="modal-header" >
+                            <ul class="nav nav-tabs" id="tabContent"  style="border:none;font-size:15px">
+                                <li class="active" class="link-4"><a href="#" data-toggle="tab">View Fixture</a></li>
+                                <li class="link-4"><a href="#" >Accessories and POP</a></li>
+                                <li class="link-4"><a href="#" >Devices and Display</a></li>
+                                <li class="link-4"><a href="#" >Fixtures and Hardware</a></li>
+                                <li class="link-4"><a href="#" >Issues</a></li>
+                                <li class="link-4"><a href="#" >Issues</a></li>
+                                <li class="link-4"><a href="#" >Gallery</a></li>
+                                <li class="link-4"><a href="#" ><div data-dismiss="modal">&times;</div></a></li>
+                            </ul>
+                        </div>
+                        <div class="row" style="border:none; display:inline">
+                            <div class="col-sm-6" style="padding-left:2px;margin-left:30px;padding-top:7%">
+                                <div class="tab" >
+                                    <button class="tablinks" onclick="TabInfo(event, 'ReportProblem2')" id="defaultOpen2">Report Problem</button>
+                                    <button class="tablinks" onclick="TabInfo(event, 'ReportCompliance2')">Report Compliance</button>
+                                </div>
+
+                                <div id="ReportProblem2" class="tabcontent" style="display:block; max-width:500px;min-width:250px">
+                                    <div class="tab-pane fade in active" id="home_else" style="border-bottom:1px  solid black;height:80px">
+                                        <table style="font-size:12px">
+                                            <tr><th>Basic Information</th></tr>
+                                            <tr><td>Fixture:Small bench</td></tr>
+                                            <tr><td>Priority:1</td></tr>
+                                            <tr><td>Language:English</td></tr>
+                                            <tr><td>Merchandising:General</td></tr>
+                                        </table>
+                                    </div>
+                                    <div class="tab-pane fade in active " id="profile_else" style="overflow-x:hidden;padding:0;margin:0; 
+                                         overflow-y:scroll;
+                                         width:100%;
+                                         height:50px;">
+                                        <table style="margin-top:2%"><tr style="font-size:12px"><th >Comments:</th></tr>
+                                            <tr><td style="font-size:13px">There are no comments.
+                                                </td>
+                                            </tr>
+                                        </table>
+                                    </div>
+                                </div>
+
+
+                                <div id="ReportCompliance2" class="tabcontent" style="max-width:500px">
+                                    <span onclick="this.parentElement.style.display = 'none'" class="topright">&times</span>
+
+                                </div>
+                            </div>
+                            <div class="col-sm-offset-1 col-sm-4" style="padding-top:0.5%">
+
+                                <img class="img-responsive" src="Images\Shelf2.jpg" usemap="#shelf" style="padding-bottom:4%" width="250" height="400" />
+                                
+                                 <img src="Images\mobile.png" id="img1" class="mobile1"  />
+                                 <img src="Images\mobile2.png" id="img2" class="mobile2"/>
+                                 <img src="Images\mobile3.png" id="img3" class="mobile3"/>
+                              <img src="Images\mobile4.png" id="img4" class="mobile4"/>
+                                <img src="Images\mobile5.png" id="img5" class="mobile5"/>
+                                <img src="Images\mobile6.png" id="img6" class="mobile6"/>
+                               <img src="Images\mobile7.png" id="img7" class="mobile7"/>
+                                    <img src="Images\mobile8.png" id="img8" class="mobile8"/>
+                                 <img src="Images\mobile9.png" id="img9" class="mobile9"/>
+                                
+
+  <form>
+    <div class="checkbox" >
+      <label><input type="checkbox" onclick="check()" id="check3" value="">Highlight changed content</label>
+    </div>
+    <div class="checkbox" >
+      <label><input type="checkbox" onclick="sameContent()" class="same"  id="check4" value="">Same content</label>
+    </div>
+    <div class="checkbox" >
+      <label><input type="checkbox" id="check1" onclick="uncheck1()" class="change" value="">Highlight Moved ones</label>
+    </div>
+    <div class="checkbox" >
+      <label><input type="checkbox" id="check2" onclick="uncheck2()" class="change" value="">Highlight newly added</label>
+    </div>
+  </form>
+
+       </div>
+     
+                        </div>
+                    </div>
+                </div>
+            </div> 
+
+
+        </div><!--Container fluid end-->
+    </body><!--Body section end-->
+</html>
