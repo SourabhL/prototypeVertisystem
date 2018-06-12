@@ -1,4 +1,44 @@
-<script type="text/javascript">
+<style>
+		/* styles unrelated to zoom */
+		* { border:0; margin:0; padding:0; }
+		p { position:absolute; top:3px; right:28px; color:#555; font:bold 13px/1 sans-serif;}
+
+		/* these styles are for the demo, but are not required for the plugin */
+		.zoom {
+			display:inline-block;
+			position: relative;
+		}
+		
+		/* magnifying glass icon */
+		.zoom:after {
+			content:'';
+			display:block; 
+			width:33px; 
+			height:33px; 
+			position:absolute; 
+			top:0;
+			right:0;	
+		}
+
+		.zoom img {
+			display: block;
+		}
+
+		.zoom img::selection { background-color: transparent; }
+
+	</style>
+
+	<script src='app\views\pages\scripts\jquery.zoom.js'></script>
+ 
+ <script>
+		$(document).ready(function(){
+			
+			$('#zoomSpan').zoom({ on:'click' });			 
+			
+		});
+	</script>
+ 
+ <script>
  $('#responsive-image[usemap]').rwdImageMaps(); 
 
 </script>
@@ -8,8 +48,22 @@
 				
 	   
 	<div class="col-md-12">
-		<img class="img-responsive store" id="responsive-image"  src="app/views/Images/mystore.png" 
-				style="width:900px;height:446px;margin:0;padding:0" usemap="#mobilestore" >
+         <span class='col-md-9 zoom' id='zoomSpan' style="display:none">
+            <img class="img-responsive" id="responsive-image" src='app/views/Images/mystore.jpg' 
+                style="width:900px;height:446px;margin:0;padding:0" usemap="#mobilestore"/> 
+        </span> 
+         
+        <span class="col-md-9" id="normalSpan">
+            <img class="img-responsive" id="responsive-image" src="app/views/Images/mystore.png" 
+                    style="width:900px;height:446px;margin:0;padding:0" usemap="#mobilestore" >  
+        </span>
+        <span class="col-md-2">
+            <button type="button" class="btn btn-primary" 
+                style="margin:10px;" id="zoomImageButton" >Zoom Image</button>
+            <button type="button" class="btn btn-primary" 
+                 style="margin:10px;display:none" id="normalImageButton">Normal Image</button>
+            
+        </span>
 	</div>
 				
 	<map name="mobilestore"><!--Map started -->
@@ -217,19 +271,30 @@
 <script type="text/javascript">
 		
 	$(document).ready(function()
-	{
-		$(".navbar-nav li a").click(function(event) 
-		{
-			$(".navbar-collapse").collapse('hide');
-		});
+    {
+        $(".navbar-nav li a").click(function(event) 
+        {
+            $(".navbar-collapse").collapse('hide');
+        });
 		  
-		$('html, body').animate(
-		{
-			scrollTop: 0
-		}, 'slow');
-	
-	
-		$('div.img-responsive').css('background-repeat','no-repeat');
-	});
+        $('html, body').animate(
+        {
+            scrollTop: 0
+        }, 'slow');
 		
+        $('#zoomImageButton').click(function(){
+            $('#normalImageButton').show();
+            $('#zoomImageButton').hide();
+            $('#zoomSpan').show();
+            $('#normalSpan').hide();
+        });
+        
+        $('#normalImageButton').click(function(){
+            $('#zoomImageButton').show();
+            $('#normalImageButton').hide();
+            $('#normalSpan').show();
+            $('#zoomSpan').hide();
+        });
+    });
+	$('div.img-responsive').css('background-repeat','no-repeat');
 </script>
