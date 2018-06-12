@@ -1,0 +1,94 @@
+
+        <div class="container">
+            
+           
+                  <br/>
+                  <div class="jumbotron text-primary" style="background-color:#337ab7;color : #fff;">
+                        <h2><strong>Optimize Page Load Time</strong></h2>
+                      
+                    <p>Web page loading speed is a crucial part of a site's usability. Google considers page speed to be one of the 200 ranking factors that influence a website's position in organic search results, and it definitely enriches user-experience. With numerous other websites in your niche, the competition to earn site traffic and keep people impressed with rich usability is becoming more crucial every day. If your website does not load quickly, chances are you will lose site visitors to your competition in a matter of seconds.</p>  
+                  </div>
+            <br/>
+            
+        <h3 class="text-primary"><strong>1. Optimize Image Size and Format</strong></h3>
+        <p>
+            The images on your site can take up a lot of bandwidth, which affects the loading time of your page. It is not enough to downsize your website’s images in HTML because that only changes the appearance of the image and not its actual size. Use external picture editor tools to resize the images, such as Photoshop and set them to 72dpi.
+
+            Additionally, use image optimization tools which further compress the image to reduce its size:
+        </p>    
+            <ul>
+                <li>JPEG & PNG Stripper</li>
+                <li>Smush.it</li>
+                <li>Online Image Optimizer</li>
+                <li>SuperGIF</li>
+            </ul>
+        <br/>
+        
+        <h3 class="text-primary"><strong>2. Optimize Dependencies</strong></h3>
+        <p>
+            <strong>Plugins:</strong> A site that requires plugins may slow your page loading speed. Not all plugins are unnecessary; for example, social share plugins which are a must-have for every site these days. That said, always check to see if there is a better alternative to the plugin, such as using a CMS with built-in social plugins.        
+        </p> 
+        <p>
+            <strong>Tracking Scripts:</strong> While it is wise to keep tabs on your website’s traffic stats, it is not advisable to use multiple tracking softwares as this may hinder the page load time. If you are using a CMS such as WordPress, you should allow either WP stats to run scripts on your page or Google Analytics, but not both.
+        </p> 
+        <p>
+            <strong>CMS Software:</strong> If you are using a CMS such as WordPress it is recommended to check frequently for updates in the software but do not load these on a live website. First carry out upgrades on a separate server to test them. Keeping abreast of software updates also improves a site’s speed.
+        </p>     
+            
+        <br/>
+        
+        <h3 class="text-primary"><strong>3. Avoid Inline JS and CSS files</strong></h3>
+        <p>
+            It is a good practice to place your website’s JS and CSS in external files. When the page loads the browser caches these files externally and reduces the page load time on subsequent requests. Moreover, having the JS and CSS files externally allows for easier site maintenance.   
+        </p>
+        <br/>
+        
+        <h3 class="text-primary"><strong>4. Optimize Caching</strong></h3>
+        <p>
+            Every time a visitor loads a site, your web page’s image files, CSS and Java files load as well, taking up a lot of page load time. When caching is set up correctly, your browser can store these resources or files for subsequent requests. On repeated page loads these files can be retrieved from the cache rather than downloading them all over again from the network. This also reduces bandwidth and hosting costs.
+
+            You can use Expires headers for static components of the site and Cache-Control headers for dynamic ones. Using these headers makes the various components of a site, including images, stylesheets, scripts and flash, cacheable. This in turn minimizes HTTP requests and thus improves the page load time. With the use of Expires headers you can actually control the length of time that components of a web page can be cached, as shown in the example below:   
+        </p>    
+        <p><code>Expires: Wed, 20 Apr 2015 20:00:00 GMT</code></p>    
+        <p>If your server is Apache you can set the time for cached content by using the ExpiresDefault directive. This sets the expiration date as a certain number of years from the current date:</p>
+        <p><code>ExpiresDefault “access plus 15 years”</code></p>        
+        <br/>
+            
+        <h3 class="text-primary"><strong>5. Avoid render blocking scripts</strong></h3>
+        <p>
+            Place javascript files at the end of the body or use the 'async' attribute to load them asynchronously.   
+        </p>
+        <br/>
+
+        <h3 class="text-primary"><strong>6. Avoid Redirects</strong></h3>
+        <p>
+            Avoiding redirects increases serving speed. Some redirects are unavoidable and need to be in place but you must remember that this requires an additional HTTP which increases the page load time. Check for broken links and fix them immediately. 
+        </p>
+        <br/>
+            
+        <h3 class="text-primary"><strong>7. Set up G-Zip Encoding</strong></h3>
+        <p>
+            Similar to files on your PC that are zipped and compressed to reduce the total size during online file transfers, heavy files on your website can be zipped with something called the <a href="http://betterexplained.com/articles/how-to-optimize-your-site-with-gzip-compression/">G-Zip Compression</a>. This saves bandwidth and download time and reduces your page loading speed. You should configure the server so that it returns zipped content.  
+        </p>
+        <br/>
+
+        <h3 class="text-primary"><strong>8. Reduce HTTP Requests</strong></h3>
+        <p>
+            Use CSS Sprites to reduce the number of image requests. Combine background images into a single image by using CSS background-image and background-position elements. Combine inline images into your cached stylesheets. Likewise, combine all your javascript files into a single file and all your CSS files as well.  
+        </p>
+        <br/>
+
+        <h3 class="text-primary"><strong>9. Minification of JavaScript and CSS</strong></h3>
+        <p>
+            <a href="https://en.wikipedia.org/wiki/Minification_(programming)">Minification</a> is the process of compressing the code by renaming variables to shorter names which helps to reduce its size and the subsequent loading time. We recommend using uglify.js for this.
+        </p>
+        <br/>
+
+        <h3 class="text-primary"><strong>10. Reduce Cookie Size</strong></h3>
+        <p>
+           Cookies are used to store data that needs to persist between requests. This data is sent on every request and adds to the load time when it’s big. Hence, by reducing the size of the cookies you reduce the size of the data that is transferred and decrease the page load time. Eliminate unnecessary cookies or reduce the size of the cookies.
+        </p>
+        <br/>
+    
+            
+        </div>    

@@ -1,0 +1,73 @@
+var people = [ {
+			id:1,
+			name : 'Ram',
+			city : 'pakistan',
+			joined : '2000-12-02',
+			total : '30.234',
+			orders:[{
+				id:1,
+				product:'Mouse',
+				orderTotal:'30.234'
+			}]
+		}, {
+			id:2,
+			name : 'Amit',
+			city : 'trivendram',
+			joined : '2012-05-02',
+			total : '45.234',
+			orders:[{
+				id:1,
+				product:'Apples',
+				orderTotal: '45.234'
+			}]
+				
+		}, {
+			id:3,
+			name : 'Seeta',
+			city : 'Lucknow',
+			joined : '2000-12-02',
+			total : '90.29',
+			orders:[{
+					id:1,
+					product:'Shoes',
+					orderTotal:'90.29'
+				},
+				{
+					id:2,
+					product:'Socks',
+					orderTotal:'64.80'
+				}]
+		}, {
+			id:4,
+			name : 'Ram',
+			city : 'Indore',
+			joined : '1995-04-12',
+			total : '12.863',
+			orders:[{
+				id:1,
+				product:'Dolby Digital',
+				orderTotal:'12.863'
+			}]
+		}, {
+			id:5,
+			name : 'Kapil',
+			city : 'Daman',
+			joined : '2000-12-02',
+			total : '11.78',
+			orders:[{
+				id:1,
+				product:'Activa',
+				orderTotal:'11.78'
+			}]
+		}, {
+			id:6,
+			name : 'Tanmay',
+			city : 'Pune',
+			joined : '2000-12-02',
+			total : '98.72',
+			orders:[{
+				id:1,
+				product:'Goggles',
+				orderTotal:'98.72'
+			}]
+		} ];

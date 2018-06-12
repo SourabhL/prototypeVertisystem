@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<!-- define angular app -->
+<html ng-app="mainApp">
+<head>
+	<title>Vertisystem</title>
+	<!-- CSS Libraries -->
+	<link rel="stylesheet" href="app/views/pages/styles/font-awesome-4.7.0/css/font-awesome.min.css" />
+	<link rel="stylesheet" href="app/views/pages/styles/bootstrap.min.css" />
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+	<!-- Custom CSS -->
+  	<link rel="stylesheet" href="app/animations.css" type="text/css"/>
+  	<link rel="stylesheet" href="app/views/pages/styles/style.css" type="text/css"/>
+	<base href="/" />
+	<!--Zoom css-->
+	
+	<link rel="stylesheet" href="app/views/pages/styles/pygments.css" type="text/css"/>
+
+	<!-- Libraries and Plugins -->
+	<script type="text/javascript" src="app/views/pages/scripts/jquery.js"></script>
+	<script type="text/javascript" src="app/views/pages/scripts/bootstrap.js"></script>
+	<script type="text/javascript" src="app/views/pages/scripts/angular.min.js"></script>
+	<script type="text/javascript" src="app/views/pages/scripts/angular-route.min.js"></script>
+	<script type="text/javascript" src="app/views/pages/scripts/angular-animate.js"></script>
+	
+	<!--zoom-->
+	<script type="text/javascript" src="app/views/pages/scripts/easyzoom.js"></script>
+
+	<script type="text/javascript" src="/socket.io/socket.io.js"></script>
+	<script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+	<script type="text/javascript" src="app/app.routes.js"></script>
+	<script type="text/javascript" src="app/views/pages/ckeditor/ckeditor.js"></script>
+
+	<!-- Controller and Services -->
+	<script type="text/javascript" src="app/services/authService.js"></script>
+	<script type="text/javascript" src="app/services/storyService.js"></script>		
+	<script type="text/javascript" src="app/services/user.js"></script>
+
+	<script type="text/javascript" src="app/controllers/mainCtrl.js"></script>	
+	<script type="text/javascript" src="app/controllers/userCtrl.js"></script>
+	<script type="text/javascript" src="app/controllers/storyCtrl.js"></script>
+	
+	<script type="text/javascript" src="app/app.js"></script>
+	
+	<script src="app/views/js/ios-orientationchange-fix.min.js"></script>
+	<script src="app/views/js/jquery.rwdImageMaps.min.js"></script>
+	<!--Javascript function call to change the image co-ordinate dynamically according to window size-->
+	
+	
+	<script type="text/javascript" src="app/views/js/jquery.maphilight.min.js"></script>
+	<script type="text/javascript" src="app/views/js/jquery.maphilight.js"></script>
+
+	<script src="app/views/js/b2b_image_script.js"></script> 
+	
+	
+</head>
+
+<body ng-controller="MainController as main" style="overflow-x:hidden">
+		
+	<nav class="navbar navbar-default navbar-static-top">
+		<div style="margin-left: 10px;">
+			<div class="navbar-header">
+			
+				<button class="navbar-toggle pull-left" ng-if="main.loggedIn" data-toggle="collapse" data-target=".navHeaderCollapse">
+					<span class="icon-bar"></span>
+					<span class="icon-bar"></span>
+					<span class="icon-bar"></span>
+				</button>
+				
+				<a class="navbar-brand" href="#/" ng-if="main.loggedIn">
+					<img src="app/views/pages/images/logo.png" style="padding:0;margin:0;margin-top:-20px;" alt="logo" />
+				</a>
+					
+				<a class="navbar-brand pull-left" href="#/"  ng-if="!main.loggedIn">
+					<img src="app/views/pages/images/logo.png" style="padding:0;margin:0" alt="logo"/>
+				</a>
+				
+			</div>
+
+		  	<div class="">
+
+				<ul class="nav navbar-nav navbar-right" style="padding:12px;">
+					<li><a href="/"><i></i></a></li>
+					<li ng-if="!main.loggedIn"><a href="#/signup"><i class="fa fa-user"></i> Signup</a></li>
+					<li ng-if="main.loggedIn">
+						<a href="#/profile">
+							<i class="fa fa-x fa-user"></i> <strong>{{main.loginData.name}} </strong>
+						</a>
+					</li>
+					<li ng-if="main.loggedIn"><a href="#/" ng-click="main.doLogout()"><i class="fa fa-sign-out"></i> Logout</a></li>
+				</ul>
+				
+		  	</div>
+
+		  	<br/>
+			<!--- Tab Navigation -->
+			<div class="text-info navbar-collapse collapse navHeaderCollapse" ng-if="main.loggedIn">
+				<br/>
+	            <div class="col-md-12">
+	                <ul class="nav navbar-nav">
+	                    <li ng-class="{'active': view_tab == $index}" ng-repeat="tab in tabs"> 
+	                        <a class="btn-lg" href="{{tab.tab_ref}}" ng-click="changeTab($index);"> {{tab.name}}</a>
+	                    </li>
+	                </ul>
+	            </div>
+			</div>
+			
+		  		
+		</div>
+		
+	</nav>
+	<br/>
+	<div ng-view class="slide-animation"></div>
+	
+	<script type="text/javascript">
+		$(document).ready(function(){$(".navbar-nav li a").click(function(event) {
+			$(".navbar-collapse").collapse('hide');
+		  });
+		  });
+		
+	</script>
+</body>
+</html>

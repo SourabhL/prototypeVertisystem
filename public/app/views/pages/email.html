@@ -1,0 +1,20 @@
+
+
+<div class="container" ng-controller="EmailController as email" >
+  <div class="row">
+  	<div class="form-group col-ld-12">
+                  <em><label style="text-align: left">Template </label> </em><!-- <input type="textarea"
+                    name="DNformTemplateText" class="form-control" id=""
+                    ng-model="DNformTemplateText"> -->
+                    
+                     <textarea name="editor1" id="editor1" class="form-control" rows="1" cols="80"  ng-model="DNformTemplateText" >
+                     This is my textarea to be replaced with CKEditor.
+                     </textarea>
+                     <script>
+                // Replace the <textarea id="editor1"> with a CKEditor
+                // instance, using default configuration.
+                CKEDITOR.replace( 'editor1' ); 
+            </script>
+    </div>
+  </div>
+</div>

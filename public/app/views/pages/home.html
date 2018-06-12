@@ -1,0 +1,43 @@
+<style type="text/css">
+	.jumbotron
+	{
+		background-color: #F5F7FA;
+		color: #DC143C;
+	}
+</style>
+
+<div class="col-md-offset-1 col-md-10">
+	<br/>
+	
+	<div class="row">
+	  
+		<div class="col-md-11" ng-controller="StoryController as story">
+			<div class="row">
+				<div class="panel panel-primary col-md-5">
+					<div class="panel-heading">
+						What's on your Mind?
+					</div>
+					<div class="panel-body">
+						<form ng-submit="story.createStory()">
+							<input type="text" class="form-control input-lg" name="story" ng-model="story.storyData.content" 
+									placeholder="......" required />
+						</form>
+					</div>
+				</div>
+				<div class="panel panel-success col-md-12">
+					<div class="panel-heading">
+						Open Questions
+					</div>
+					<div class="panel-body">
+						<ul>
+							<li ng-repeat="each in story.stories ">{{each.content}}</li>
+						</ul>
+					</div>
+				</div>
+			</div>
+
+		</div>
+
+	</div>
+
+</div>

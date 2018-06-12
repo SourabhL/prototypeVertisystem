@@ -1,0 +1,49 @@
+<div class="container" ng-controller="UserCreateController as user"  >
+  <div class="row">
+  	<div class="col-md-6">
+		<form class="form-horizontal" method="POST" ng-submit="user.signUpuser()">
+			<fieldset>
+				<div id="legend">
+				<legend class="">Register</legend>
+				</div>
+
+
+				<div class="control-group">
+					<label class="control-label" for="email">Name</label>
+					<div class="controls">
+						<input id="email" name="name" ng-model="user.userData.name" placeholder="" class="form-control input-lg" type="text">
+						<p class="help-block">Please provide your Full Name</p>
+					</div>
+				</div>
+
+				<div class="control-group">
+					<label class="control-label" for="username">Username</label>
+					<div class="controls">
+						<input id="username" name="username" ng-model="user.userData.username" placeholder="" class="form-control input-lg" type="text">
+						<p class="help-block">Username can contain any letters or numbers, without spaces</p>
+					</div>
+				</div>
+
+
+				<div class="control-group">
+					<label class="control-label" for="password">Password</label>
+					<div class="controls">
+						<input id="password" name="password" ng-model="user.userData.password" placeholder="" class="form-control input-lg" type="password">
+						<p class="help-block">Password should be at least 6 characters</p>
+					</div>
+				</div>
+
+
+				<div class="control-group">
+				<!-- Button -->
+					<div class="controls">
+						<button class="btn btn-success">Register</button>
+					</div>
+				</div>
+			</fieldset>
+		</form>
+    </div> 
+
+    <div class="col-md-6" style="background-image:url('app/views/pages/images/rr.jpg');"> </div>
+  </div>
+</div>

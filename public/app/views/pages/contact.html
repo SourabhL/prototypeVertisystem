@@ -1,0 +1,40 @@
+<div class="container text-primary" ng-controller="contactController">
+		
+	<br/>
+	<div class="col-md-4">	
+		<h3>
+			Open Requirements : {{people.length}}
+		</h3>
+	</div>
+		
+	<input type="text" class="form-control" ng-model="userName" placeholder="Search........"/>{{userName}}
+	
+	<div class="row">
+		<br/>
+		<table class="table table-striped text-primary">
+			<thead>
+				<tr>
+					<th ng-click="sortBy='name';reverse!=reverse">Name</th>
+					<th ng-click="sortBy='city';reverse!=reverse">Client</th>
+					<th ng-click="sortBy='joined';reverse!=reverse">Job Title</th>
+					<th ng-click="sortBy='total';reverse!=reverse">Created Date</th>
+					<th ng-click="sortBy='total';reverse!=reverse">Total</th>
+					<th ng-click="sortBy='total';reverse!=reverse">Details</th>
+				</tr>
+			</thead>
+
+			<tbody>
+				<tr ng-repeat="person in people | filter: userName | orderBy:sortBy:reverse" class="repeat-animation">
+					<td>{{person.name | uppercase}}</td>
+					<td>{{person.team}}</td>
+					<td>{{person.joined | date}}</td>
+					<td>{{person.joined | date}}</td>
+					<td>{{person.total | currency : 'Rs.'}}</td>
+					<td><a href="#/about/{{person.id}}"><strong>View Tickets</strong></a></td>
+				</tr>
+			</tbody>
+		</table>
+	</div>
+	
+</div>
+	

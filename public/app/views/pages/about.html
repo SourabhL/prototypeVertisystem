@@ -1,0 +1,43 @@
+<div class="container" id="tableToExport" ng-controller="aboutController">
+	<h2 class="text-success">{{people.name}}'s Tickets</h2>
+	<hr/>
+	<div class="col-md-12">
+		<table class="table table-striped text-danger">
+				<thead>
+					<tr>
+						<th>Ticket</th>
+						<th>Description</th>
+						<th>Footprints Status</th>
+						<th>Ops Complete Date</th>
+						<th>Current Status</th>
+						<th>% Completion</th>
+
+					</tr>
+				</thead>
+				<tbody>
+					<tr ng-repeat="ticket in people.tickets">
+						<td>{{ticket.id}}</td>
+						<td>{{ticket.description}}</td>
+						<td>{{ticket.fp_status}}</td>
+						<td>{{ticket.opsDate | date}}</td>
+						<td>{{ticket.status}}</td>
+						<td>{{ticket.completion}}</td>
+					</tr>
+				</tbody>
+		</table>
+	</div>
+
+	
+</div>
+
+
+<div class="col-md-offset-3 col-md-4">
+	<button class="btn btn-link" back-button>
+		<span class="glyphicon glyphicon-back"></span>
+			Back
+	</button>
+	<button class="btn btn-link" ng-click="exportToExcel('#tableToExport')">
+		<span class="glyphicon glyphicon-share"></span>
+			Export to Excel
+	</button>
+</div>

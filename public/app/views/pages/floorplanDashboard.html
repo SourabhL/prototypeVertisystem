@@ -1,0 +1,235 @@
+<script type="text/javascript">
+ $('#responsive-image[usemap]').rwdImageMaps(); 
+
+</script>
+
+
+<div class="container-fluid" style="overflow-x:hidden"><!--Container fluid-->
+				
+	   
+	<div class="col-md-12">
+		<img class="img-responsive store" id="responsive-image"  src="app/views/Images/mystore.png" 
+				style="width:900px;height:446px;margin:0;padding:0" usemap="#mobilestore" >
+	</div>
+				
+	<map name="mobilestore"><!--Map started -->
+                
+		<!-- upper left-->
+		<area  coords="93,12,223,84" shape="rect" href="#"
+			  data-reveal-id="one" data-toggle="modal" data-target="#myModal2">
+
+		  <!--upper right-->
+		<area coords="702,15,832,88" shape="rect"  href="#" 
+			   data-reveal-id="one" data-toggle="modal" data-target="#myModal2">
+
+		<!--first-->
+	   <area shape="rect" coords="183,161,325,233"  href="#" data-reveal-id="two" data-toggle="modal" data-target="#myModal2" >
+	   <!--second-->
+		<area shape="rect" coords="364,160,503,230"  href="#" data-reveal-id="two" data-toggle="modal" data-target="#myModal2" >
+		<!--third-->
+		<area shape="rect" coords="557,162,697,230" href="#" data-reveal-id="two" data-toggle="modal" data-target="#myModal2" >
+
+	</map>
+	<!--Map End here............. -->
+
+	<!-- Shelf1 Image Modal -->
+	<div class="modal fade" id="myModal" role="dialog">
+		<div class="modal-dialog" >
+			<div class="modal-content">
+
+				<!--navidation bar on modal-->
+				<div class="modal-header" >
+					<ul class="nav navbar-nav" id="tabContent"  style="border:none;font-size:13px;">
+						<li class="active link-4"><a href="" data-toggle="tab">View Fixture</a></li>
+						<li class="link-4"><a href="" >Accessories and POP</a></li>
+						<li class="link-4"><a href="" >Devices and Display</a></li>
+						<li class="link-4"><a href="" >Fixtures and Hardware</a></li>
+						<li class="link-4"><a href="" >Issues</a></li>
+						<li class="link-4"><a href="" >Gallery</a></li>
+						<li class="link-4"><a href="" ><div data-dismiss="modal">&times;</div></a></li>
+					</ul>
+				</div>
+				<div class="row" style="border:none; display:inline">
+					
+					<div class="col-md-offset-1 col-md-4" style="padding-top:0.5%">
+						<img class="img-responsive" src="app/views/Images/Shelf1.jpg" usemap="#shelf" width="250" height="400" />
+
+					</div>
+				</div>
+			</div>
+		</div>
+	</div> <!--End modal1-->
+
+
+	<div class="modal fade" id="myModal2" role="dialog" >
+	
+		<script type="text/javascript">
+			init();
+		</script>
+		<div class="modal-dialog modal-lg"  >
+			<div class="modal-content" style="height:50%">
+				<!--navidation bar on modal-->
+				<div class="modal-header" >
+					<ul class="nav nav-tabs" id="tabContent"  style="border:none;font-size:15px">
+						<li class="active" class="link-4"><a href="" data-toggle="tab">View Fixture</a></li>
+						<li class="link-4"><a href="" >Accessories and POP</a></li>
+						<li class="link-4"><a href="" >Devices and Display</a></li>
+						<li class="link-4"><a href="" >Fixtures and Hardware</a></li>
+						<li class="link-4"><a href="" >Issues</a></li>
+						<li class="link-4"><a href="" >Gallery</a></li>
+						<li class="link-4 pull-right" data-dismiss="modal"><a href="" ><div >&times;</div></a></li>
+					</ul>
+				</div>
+				<br/>
+				
+				<div class="row">
+					<div class=" col-md-offset-8 col-md-3">
+						<select class="form-control" name="mobileList" id="mobileList" >
+						  <option value="">Select Phone</option>
+						  <option details="Model:Galaxys9, Brand:Samsung,Size:6.2 inches,Camera:13MP" value="LG_V30">LG V30</option>
+						  <option details="Model:Vivo v7, Brand:VIVO,Size:5.2 inches,Camera: 17MP" value="ASUS_Zenfone_V_Live">ASUS Zenfone Live</option>
+						  <option details="Model:Oppo F5, Brand:oppo,Size:7 inches,Camera: 23MP"  value="MotoZ2Play">MotoZ2Play</option>
+						  <option details="Model:Iphone 6, Brand:oppo,Size:7 inches,Camera: 23MP" value="Apple-iPhoneX">Apple iPhoneX</option>
+						  <option details="Model:Iphone 6s, Brand:oppo,Size:7 inches,Camera: 23MP" value="SAMSUNG_Galaxy_S9">Samsung Galaxy S9</option>
+						  <option details="Model:Iphone 7, Brand:oppo,Size:7 inches,Camera: 23MP" value="Great_Black_VZW">Great Black VZW</option>
+						  <option details="Model:Iphone 7s, Brand:oppo,Size:7 inches,Camera: 23MP" value="samsung-galaxy-j3">Samsung Galaxy J3</option>
+						  <option details="Model:Iphone 8, Brand:oppo,Size:7 inches,Camera: 23MP" value="GOOGLE_Walleye_Denim">Google Walleye Denim</option>
+						  <option details="Model:Iphone X, Brand:oppo,Size:7 inches,Camera: 23MP" value="Google_Marlin_Slate">Google Marlin Slate</option>
+					 </select>
+					</div>
+				</div>
+				<br/>
+				<div class="row" style="border:none;">
+					<div class="col-md-5" style="padding-top:0.5%;padding-left:5%">
+						<!-- Floorplan Image -->
+						<img class="map img-responsive" src="app/views/Images/Shelf2.jpg" usemap="#shelf" style="padding-left: 5%; margin-left: 5%;width:260px;" />
+						
+						<map name="shelf" class="Mobiles">
+							
+							<!--moved  -->
+							  <area  coords="31,0,83,65" shape="rect" class="moved" 
+								details="Model:Galaxys9, Brand:Samsung,Size:6.2 inches,Camera:13MP"
+								source='LG_V30'
+								data-maphilight='{"strokeColor":"0000ff","strokeWidth":2,"fillColor":"e6f2ff"}'/>
+							
+							<area  coords="113,1,155,69" shape="rect" class="moved"
+								details="Model:Vivo v7, Brand:VIVO,Size:5.2 inches,Camera: 17MP"
+								source='ASUS_Zenfone_V_Live'
+								data-maphilight='{"strokeColor":"0000ff","strokeWidth":2,"fillColor":"e6f2ff"}' />
+						  
+							<area coords="189,1,232,64" shape="rect" class="moved"
+								details="Model:Oppo F5, Brand:oppo,Size:7 inches,Camera: 23MP"       source='MotoZ2Play'
+								data-maphilight='{"strokeColor":"0000ff","strokeWidth":2,"fillColor":"e6f2ff"}'/>
+				  
+							<!-- newlyAdded -->
+							<area coords="31,74,85,140" shape="rect" class="newlyAdded"
+								details="Model:Iphone 6, Brand:oppo,Size:7 inches,Camera: 23MP"
+								source='Apple-iPhoneX'
+								data-maphilight='{"strokeColor":"FF9537","strokeWidth":2,"fillColor":"e6f2ff"}'/>                          
+							<area coords="108,75,161,139"  shape="rect" class="newlyAdded"
+								details="Model:Iphone 6s, Brand:oppo,Size:7 inches,Camera: 23MP"     
+								source='SAMSUNG_Galaxy_S9'
+								data-maphilight='{"strokeColor":"FF9537","strokeWidth":2,"fillColor":"e6f2ff"}'/> 
+
+								 
+							<area coords="183,75,233,138"  shape="rect" class="newlyAdded"
+								details="Model:Iphone 7, Brand:oppo,Size:7 inches,Camera: 23MP"    
+								source='Great_Black_VZW'
+								data-maphilight='{"strokeColor":"FF9537","strokeWidth":2,"fillColor":"e6f2ff"}'/>
+									
+									
+							<!-- same -->
+							<area coords="33,144,80,212"  shape="rect" class="same"
+								details="Model:Iphone 7s, Brand:oppo,Size:7 inches,Camera: 23MP" 
+								source='samsung-galaxy-j3'
+								data-maphilight='{"strokeColor":"228B22","strokeWidth":2,"fillColor":"FFFFFF"}'/>
+									
+							<area coords="110,144,159,206"  shape="rect" class="same"
+								details="Model:Iphone 8, Brand:oppo,Size:7 inches,Camera: 23MP" 
+								source='GOOGLE_Walleye_Denim'
+								data-maphilight='{"strokeColor":"228B22","strokeWidth":2,"fillColor":"FFFFFF"}'/>
+									
+							<area coords="186,143,229,207"  shape="rect" class="same"
+								details="Model:Iphone X, Brand:oppo,Size:7 inches,Camera: 23MP" 
+								source='Google_Marlin_Slate'
+								data-maphilight='{"strokeColor":"228B22","strokeWidth":2,"fillColor":"FFFFFF"}'/>
+								  
+						</map>              
+						
+						<form id="phoneInfoForm" style="font-size:14px;">
+							<div class="row">
+								<div class="col-md-9">
+									<div class="checkbox" >
+										<label class="text-primary">
+											<input type="checkbox" onclick="highlightImages(this)" id="highlightChangedCheck" 
+											value="highlightChangedCheck" class="highlightChangedCheck">
+												Highlight changed content
+											</label>
+									</div>
+								</div>
+								
+							</div>
+							<div class="row">
+								<div class="col-md-6">
+									<div class="checkbox" >
+										<label class="text-primary">
+											<input type="checkbox" id="movedCheck" onclick="highlightImages(this)" 
+											class="change" value="movedCheck">    Highlight Moved ones
+										</label>
+									</div>
+								</div>
+								<div class="col-md-6">
+									<div class="checkbox" >
+										<label class="text-primary">
+											<input type="checkbox" id="newlyAddedCheck" onclick="highlightImages(this)" 
+												class="change"  value="newlyAddedCheck"> Highlight newly added
+											</label>
+									</div>
+								</div>
+							 </div>
+							 <div class="row">
+								<div class="col-md-5">
+									<div class="checkbox" >
+										<label class="text-primary">
+											<input type="checkbox" onclick="highlightImages(this)" class="same"  
+												id="sameContentCheck" value="sameContentCheck">
+												Same content
+											</label>
+									</div>
+								</div>
+							 </div>
+						</form>
+					</div>
+					<div class="col-md-6">
+						<div class="col-md-6" id="big-image">
+							<img id= "my_image"  src="" style="display:none;width: 150px;height: 250px"/>
+						</div> 
+			   
+						<div class="col-md-5"  id="content">
+						  
+						</div>
+					</div>
+				</div>
+		</div>
+	</div> <!--End modal2-->
+
+</div><!--Container fluid end-->
+<script type="text/javascript">
+		
+	$(document).ready(function()
+	{
+		$(".navbar-nav li a").click(function(event) 
+		{
+			$(".navbar-collapse").collapse('hide');
+		});
+		  
+		$('html, body').animate(
+		{
+			scrollTop: 0
+		}, 'slow');
+	
+	
+		$('div.img-responsive').css('background-repeat','no-repeat');
+	});
+		
+</script>

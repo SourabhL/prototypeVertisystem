@@ -1,0 +1,177 @@
+	<div class="row" style="margin-left: 25px;margin-right: 25px;">
+		<div class="page-wrapper">
+			<div class="page-content">
+				<div class="col-md-12">
+					<p style="font: bold; color: #045e81;">
+						<font size="4" color="#045e81">Logged In As :</font> <font size="4"
+							color="#2C3E50">Recruiter</font>
+					</p>
+				</div>
+
+				<div class="my-class col-md-12"
+					style="border: 1px thin rgb(86, 180, 239); box-shadow: 0px 1px 3px #B7B2B2 inset, 0px 0px 8px #B7B2B2; margin-bottom: 10px;">
+					<br/>
+					<div class="col-md-3 text-danger"
+						style="border: 1px thin rgb(86, 180, 239); margin-bottom: 10px;">
+
+						<font size="5"><strong>My Current Assignments</strong></font>
+						<hr>
+
+						<a href="#/OrderHistory" class="btn btn-link">44692 :Facebook - <strong>Java Developer</strong></a>
+
+						<a href="#/OrderHistory" class="btn btn-link">38196 - Facebook - <strong>Quality Analyst</strong></a>
+
+						<a href="#/OrderHistory" class="btn btn-link">22684 - Walmart - <strong>React Lead</strong></a>
+
+						
+						<hr>
+					</div>
+
+					<div class="col-md-3 text-success"
+						style="border: 1px thin rgb(86, 180, 239); box-shadow: 2px 0px 0px #B7B2B2 inset, 2px 0px 0px #B7B2B2; margin-bottom: 10px;">
+
+						<font size="5"><strong>My Recent Events</strong></font>
+						<hr>
+						
+						<a href="#/DigitalNotification" class="btn btn-link">30-08-17 01:00 AM: <strong>Follow on HANA position</strong></a>
+						
+						<a href="#/SoftLaunch" class="btn btn-link"> 21-04-17 01:00 AM: Interview - <strong>GDC Reg Receptionist</strong></a>
+					</div>
+
+					<div class="col-md-3 text-primary">
+
+						<font size="5"><strong>My Upcoming Events</strong></font>
+						<hr>
+						<a href="#/OrderHistory" class="btn btn-link">14-08-18 12:33 AM: <strong>Interview ansari</strong></a>
+						<a href="#/OrderHistory" class="btn btn-link">07-08-18 07:02 AM: <strong>Follow-up Sercii</strong></a>
+						<a href="#/OrderHistory" class="btn btn-link">01-05-18 10:24 PM: <strong>RTR to Joy</strong></a>
+						<hr>
+					</div>
+
+					<div class="col-md-3 text-warning"
+						style="border: 1px thin rgb(86, 180, 239); box-shadow: 2px 0px 0px #B7B2B2 inset, 2px 0px 0px #B7B2B2; margin-bottom: 10px;">
+
+						<font size="5"><strong>Reports</strong></font>
+						<hr>
+						<a href="#/OrderHistory" class="btn btn-link">Candidate Background Check</a>
+						<a href="#/EmailTracker" class="btn btn-link">Candidate Timesheet</a>
+					</div>
+
+
+				</div>
+				
+			</div>
+
+			<!--below table -->
+			<div class="col-md-12" ng-controller="contactController">
+				
+				<div class="col-md-6">
+					<h3 class="text-danger"> <strong>
+						Recent Hires - (August 2017) :- 06 </strong>
+					</h3>
+						
+					<br/>
+					<table class="table table-striped text-primary">
+						<thead>
+							<tr>
+								<th ng-click="sortBy='name';reverse!=reverse"><strong>Name</strong></th>
+								<th ng-click="sortBy='city';reverse!=reverse"><strong>Company</strong></th>
+								<th ng-click="sortBy='joined';reverse!=reverse"><strong>Recruiter</strong></th>
+								<th ng-click="sortBy='total';reverse!=reverse"><strong>Joined Date</strong></th>
+							</tr>
+						</thead>
+
+						<tbody>
+							<tr class="repeat-animation">
+								<td><a href=""><strong>Micahel shah</strong></a></td>
+							 	<td>Facebook</td>
+							 	<td>Catalyst Surgery</td> 	
+							 	<td>10-08-17</td>
+							</tr>
+							<tr class="repeat-animation">
+								<td><a href=""><strong>Vera Vicente</strong></a></td>
+							 	<td>Walmart</td> 	
+							 	<td>John B.</td>
+							 	<td>28-06-17</td>
+							</tr>
+							<tr class="repeat-animation">
+								<td><a href=""><strong>Chris Smith</strong></a></td>
+							 	<td>Facebook</td> 	
+							 	<td>Red cross</td>
+							 	<td>12-01-17</td>
+							</tr>
+							<tr class="repeat-animation">
+								<td><a href=""><strong>AMUTHA a</strong></a></td>
+							 	<td>Sales Force</td> 	
+							 	<td>John B.</td>
+							 	<td>04-08-17</td>
+							</tr>
+							<tr class="repeat-animation">
+								<td><a href=""><strong>Mark Payne</strong></a></td>
+							 	<td>DRI</td> 	
+							 	<td>John B.</td>
+							 	<td>10-08-17</td>
+							</tr>
+							<tr class="repeat-animation">
+								<td><a href=""><strong>Johnny Appleseed</strong></a></td>
+							 	<td>IGT</td> 	
+							 	<td>John B.</td>
+							 	<td>10-08-17</td>
+							</tr>
+						</tbody>
+					</table>
+				</div>
+					
+				<div class="col-md-6">
+					<h3 class="text-danger"> <strong>
+						Hiring Overview : </strong>
+					</h3>
+
+					<div id="piechart"></div>
+
+					
+					<script type="text/javascript">
+					// Load google charts
+					google.charts.load('current', {'packages':['corechart']});
+					google.charts.setOnLoadCallback(drawChart);
+					
+					// Draw the chart and set the chart values
+					function drawChart() {
+					  var data = google.visualization.arrayToDataTable([
+					  ['Facebook', 'Hours per Day'],
+					  ['Clorox', 8],
+					  ['Sales Force', 2],
+					  ['DRI', 4],
+					  ['Walmart', 2],
+					  ['IGT', 8]
+					]);
+					
+					  // Optional; add a title and set the width and height of the chart
+					  var options = {'title':'August 2017 : Per Client', 'width':550, 'height':400};
+					
+					  // Display the chart inside the <div> element with id="piechart"
+					  var chart = new google.visualization.PieChart(document.getElementById('piechart'));
+					  chart.draw(data, options);
+					}
+					</script> 
+			    </div> 
+				
+			</div>
+
+			<br /> <br />
+			<br /> <br />
+			<br /> <br />
+
+		</div>
+
+		<div class="navbar navbar-default navbar-fixed-bottom">
+			<div class="container">
+				
+					<p class="navbar-text pull-left">Copyright <i class="fa fa-copyright" aria-hidden="true"></i> Vertisystem 2017</p>
+				
+			</div>
+
+		</div>
+	</div>
+
+
