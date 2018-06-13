@@ -26,6 +26,12 @@
 
 		.zoom img::selection { background-color: transparent; }
 
+        .store img
+        {
+       text-align: center;
+       
+        }
+      
 	</style>
 
 	<script src='app\views\pages\scripts\jquery.zoom.js'></script>
@@ -44,44 +50,61 @@
 </script>
 
 
-<div class="container-fluid" style="overflow-x:hidden"><!--Container fluid-->
+<div class="container text-center" style="overflow-x:hidden"><!--Container fluid-->
 				
 	   
-	<div class="col-md-12">
-         <span class='col-md-9 zoom' id='zoomSpan' style="display:none">
-            <img class="img-responsive" id="responsive-image" src='app/views/Images/mystore.jpg' 
-                style="width:900px;height:446px;margin:0;padding:0" usemap="#mobilestore"/> 
-        </span> 
-         
-        <span class="col-md-9" id="normalSpan">
-            <img class="img-responsive" id="responsive-image" src="app/views/Images/mystore.png" 
-                    style="width:900px;height:446px;margin:0;padding:0" usemap="#mobilestore" >  
-        </span>
-        <span class="col-md-2">
-            <button type="button" class="btn btn-primary" 
-                style="margin:10px;" id="zoomImageButton" >Zoom Image</button>
-            <button type="button" class="btn btn-primary" 
-                 style="margin:10px;display:none" id="normalImageButton">Normal Image</button>
-            
-        </span>
-	</div>
-				
+<div class="col-md-12">
+    <img class="img-responsive " id="responsive-image" src='app/views/Images/mystore.jpg'  
+    style="width:900px;height:446px"  usemap="#mobilestore"/> 
+  
+</div>  
+        
+       
+       <div class='text-center'> 
+                        <button type="button" class="btn btn-primary"     data-toggle="modal" data-target="#ZoomModal">
+                        Zoom Image
+                        </button>
+
+                        <!-- zoom modal begins -->
+                        <div id="ZoomModal" class="modal fade" role="dialog">
+                        <div class="modal-dialog" style="width:70%;height:100%">
+
+                        <!-- Modal content-->
+                        <div class="modal-content">
+                        <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal">&times;</button>
+                        <h4 class="modal-title">Click to Zoom</h4>
+                        </div>
+                        <div class="modal-body">
+                        <span class='zoom' id='zoomSpan'>
+                        <img src='app/views/Images/mystore.jpg' class="img-responsive" style="width:900px;height:446px"/>
+                        </span>       
+                        </div>
+                        <div class="modal-footer">
+                        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                        </div>
+                        </div>
+
+                        </div>
+                        </div>       
+   <!-- zoom modal ends -->
+    </div>    
 	<map name="mobilestore"><!--Map started -->
                 
 		<!-- upper left-->
-		<area  coords="93,12,223,84" shape="rect" href="#"
+		<area  coords="209,24,511,199"  shape="rect" href="#"
 			  data-reveal-id="one" data-toggle="modal" data-target="#myModal2">
 
 		  <!--upper right-->
-		<area coords="702,15,832,88" shape="rect"  href="#" 
+		<area coords="1593,33,1893,195"  shape="rect"  href="#" 
 			   data-reveal-id="one" data-toggle="modal" data-target="#myModal2">
 
 		<!--first-->
-	   <area shape="rect" coords="183,161,325,233"  href="#" data-reveal-id="two" data-toggle="modal" data-target="#myModal2" >
+	   <area shape="rect" coords="417,369,734,525"  href="#" data-reveal-id="two" data-toggle="modal" data-target="#myModal2" >
 	   <!--second-->
-		<area shape="rect" coords="364,160,503,230"  href="#" data-reveal-id="two" data-toggle="modal" data-target="#myModal2" >
+		<area shape="rect" coords="831,369,1148,521"  href="#" data-reveal-id="two" data-toggle="modal" data-target="#myModal2" >
 		<!--third-->
-		<area shape="rect" coords="557,162,697,230" href="#" data-reveal-id="two" data-toggle="modal" data-target="#myModal2" >
+		<area shape="rect" coords="1269,365,1588,525"  href="#" data-reveal-id="two" data-toggle="modal" data-target="#myModal2" >
 
 	</map>
 	<!--Map End here............. -->
@@ -282,19 +305,6 @@
             scrollTop: 0
         }, 'slow');
 		
-        $('#zoomImageButton').click(function(){
-            $('#normalImageButton').show();
-            $('#zoomImageButton').hide();
-            $('#zoomSpan').show();
-            $('#normalSpan').hide();
-        });
-        
-        $('#normalImageButton').click(function(){
-            $('#zoomImageButton').show();
-            $('#normalImageButton').hide();
-            $('#normalSpan').show();
-            $('#zoomSpan').hide();
-        });
     });
 	$('div.img-responsive').css('background-repeat','no-repeat');
 </script>
