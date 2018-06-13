@@ -4,7 +4,10 @@
 		p { position:absolute; top:3px; right:28px; color:#555; font:bold 13px/1 sans-serif;}
 
 		/* these styles are for the demo, but are not required for the plugin */
-		.zoom {
+        
+        
+		.zoom 
+        {
 			display:inline-block;
 			position: relative;
 		}
@@ -48,47 +51,45 @@
  $('#responsive-image[usemap]').rwdImageMaps(); 
 
 </script>
-
-
-<div class="container text-center" style="overflow-x:none"><!--Container fluid-->
+<div class="container text-center "  style="overflow-x: none"><!--Container fluid-->
 				
 	   
-<div class="col-md-12">
-    <img class="img-responsive " id="responsive-image" src='app/views/Images/mystore.jpg'  
-    style="width:900px;height:446px"  usemap="#mobilestore"/> 
-  
-</div>  
+	<div class="col-md-12">
+		<img class="img-responsive " id="responsive-image" src='app/views/Images/mystore.jpg'  
+		style="width:900px;height:446px"  usemap="#mobilestore"/> 
+	  
+	</div>  
         
        
-       <div class='text-center'> 
-			<button type="button" class="btn btn-primary"     data-toggle="modal" data-target="#ZoomModal">
-				Zoom Image
-			</button>
+   <div class='text-center'> 
+		<button type="button" class="btn btn-primary"     data-toggle="modal" data-target="#ZoomModal">
+			Zoom Image
+		</button>
 
-			<!-- zoom modal begins -->
-			<div id="ZoomModal" class="modal fade" role="dialog">
-				<div class="modal-dialog" style="width:70%;height:100%">
+		<!-- zoom modal begins -->
+		<div id="ZoomModal" class="modal fade" role="dialog">
+			<div class="modal-dialog" style="width:70%;height:100%">
 
-					<!-- Modal content-->
-					<div class="modal-content">
-						<div class="modal-header">
-							<button type="button" class="close" data-dismiss="modal">&times;</button>
-							<h4 class="modal-title">Click to Zoom</h4>
-						</div>
-						<div class="modal-body">
-							<span class='zoom' id='zoomSpan'>
-								<img src='app/views/Images/mystore.jpg' class="img-responsive" style="width:900px;height:446px"/>
-							</span>       
-						</div>
-						<div class="modal-footer">
-							<button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-						</div>
+				<!-- Modal content-->
+				<div class="modal-content">
+					<div class="modal-header">
+						<button type="button" class="close" data-dismiss="modal">&times;</button>
+						<h4 class="modal-title">Click to Zoom</h4>
 					</div>
-
+					<div class="modal-body">
+						<span class='zoom' id='zoomSpan'>
+							<img src='app/views/Images/mystore.jpg' class="img-responsive" style="width:900px;height:446px"/>
+						</span>       
+					</div>
+					<div class="modal-footer">
+						<button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+					</div>
 				</div>
-			</div>       
-   <!-- zoom modal ends -->
-    </div>    
+
+			</div>
+		</div>       
+<!-- zoom modal ends -->
+	</div>    
 	<map name="mobilestore"><!--Map started -->
                 
 		<!-- upper left-->
@@ -177,9 +178,10 @@
 				</div>
 				<br/>
 				<div class="row" style="border:none;">
-					<div class="col-md-5" style="padding-top:0.5%;padding-left:5%">
+					<div class="col-md-4" style="padding-top:0.5%;padding-left:5%;margin-left:2%;">
 						<!-- Floorplan Image -->
-						<img class="map img-responsive" src="app/views/Images/Shelf2.jpg" usemap="#shelf" style="padding-left: 5%; margin-left: 5%;width:260px;" />
+						<img class="map img-responsive " src="app/views/Images/Shelf2.jpg" usemap="#shelf" 
+						style="padding:0;margin:0;width:260px;"  />
 						
 						<map name="shelf" class="Mobiles">
 							
@@ -277,14 +279,14 @@
 							 </div>
 						</form>
 					</div>
-					<div class="col-md-6">
-						<div class="col-md-6" id="big-image">
-							<img id= "my_image"  src="" style="display:none;width: 150px;height: 250px"/>
-						</div> 
-			   
-						<div class="col-md-5"  id="content">
-						  
-						</div>
+	   
+					<div class="col-md-3" id="big-image">
+						<br/>
+						<img id= "my_image"  src="" style="display:none;width: 150px;height: 250px"/>
+					</div> 
+		   
+					<div class="col-md-3"  id="content" style="display:block">
+					  <br/>
 					</div>
 				</div>
 		</div>
